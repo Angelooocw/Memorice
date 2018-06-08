@@ -61,8 +61,8 @@ Button botonCargarJuego;
     }
 
     public void cargarJuego(View view){
-        Intent i = new Intent(getApplicationContext(), CargarUnJuego.class);
-        startActivity(i);
+        //Intent i = new Intent(getApplicationContext(), CargarUnJuego.class);
+        //startActivity(i);
     }
 
 

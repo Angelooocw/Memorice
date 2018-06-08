@@ -5,7 +5,7 @@ import android.widget.Button;
 
 import java.io.Serializable;
 
-public class Carta  implements Serializable {
+public class Carta  {
     private Button botonCarta;
     private int imagenCarta;
     private int id;

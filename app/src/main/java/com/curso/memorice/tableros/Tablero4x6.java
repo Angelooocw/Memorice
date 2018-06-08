@@ -18,6 +18,10 @@ import com.curso.memorice.JuegoGuardado;
 import com.curso.memorice.PantallaInicio;
 import com.curso.memorice.R;
 
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Vector;
 
@@ -99,11 +103,7 @@ public class Tablero4x6 extends AppCompatActivity {
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_tablero, menu);
-        return true;
-    }
+
     public void generarImagenesRandomCarta(){
         int j=0;
         for(int i=0;i<imagenesSource.length*2;i++){
@@ -156,18 +156,7 @@ public class Tablero4x6 extends AppCompatActivity {
         }
         }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.action_creditos:
-                this.guardarJuego();
-                return true;
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
     public void darVueltaCarta(View v){
 
         final Carta  aux = buscarCartaPresionada(v.getId());
@@ -263,7 +252,31 @@ public class Tablero4x6 extends AppCompatActivity {
     }
 
     public void guardarJuego(){
-        JuegoGuardado juego = new JuegoGuardado(cartasEnMesa,1);
+        Log.d("SAVE", "save");
+        String archivo = "save.txt";
+        try {
+            FileOutputStream fos = openFileOutput(archivo, MODE_PRIVATE);
+            DataOutputStream dos = new DataOutputStream(fos);
+            int tamTablero =cartasEnMesa.size();
+            dos.write(tamTablero);
+
+            for(int i=0; i < cartasEnMesa.size(); i++){
+                Carta c = cartasEnMesa.elementAt(i);
+                if(c.isParEncontrado()){
+                    dos.write(1);
+                }
+                else{
+                    dos.write(0);
+                }
+                dos.write(c.getImagenCarta());
+
+            }
+        } catch (FileNotFoundException e) {
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
 
 
