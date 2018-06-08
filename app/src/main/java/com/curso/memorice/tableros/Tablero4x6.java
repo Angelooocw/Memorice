@@ -14,6 +14,8 @@ public class Tablero4x6 extends AppCompatActivity {
 
     Vector<Carta> cartasEnMesa = new Vector<>(24);
     Vector<Button> botonesCarta = new Vector<>(24);
+    int imagenes[]= new int[12];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

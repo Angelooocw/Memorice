@@ -10,7 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".Tablero1" />
+        <activity android:name=".Tablero1">
+            <intent-filter>
+                <action android:name="tablero1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
         <activity android:name=".PantallaInicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

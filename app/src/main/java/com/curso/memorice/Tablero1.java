@@ -76,6 +76,7 @@ public class Tablero1 extends AppCompatActivity {
     }
 //Se encarga de generar la distribucion de imagenes en el tablero
     public void GenerarTablero(){
+
         int j=0;
         for(int i=0;i<imagenes.length*2;i++){
             if(j==imagenes.length) j=0;
