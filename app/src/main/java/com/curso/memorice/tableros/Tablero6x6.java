@@ -136,12 +136,12 @@ public class Tablero6x6 extends AppCompatActivity {
         else{
             aux.setEstaDadaVuelta(true);
             aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
-
+            aux.getBotonCarta().setClickable(false);
             if(cartaLevantada==null){
                 cartaLevantada = aux;
             }
             else{
-                Log.d("MESA", "AAAAA");
+
                 for(int i =0; i < cartasEnMesa.size();i++){
                     cartasEnMesa.elementAt(i).getBotonCarta().setClickable(false);
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -125,6 +126,18 @@ public class Tablero4x6 extends AppCompatActivity {
         }
         }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_creditos:
+                this.guardarJuego();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     public void darVueltaCarta(View v){
 
         final Carta  aux = buscarCartaPresionada(v.getId());
@@ -137,6 +150,7 @@ public class Tablero4x6 extends AppCompatActivity {
         }
         else{
             aux.setEstaDadaVuelta(true);
+            aux.getBotonCarta().setClickable(false);
             aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
 
             if(cartaLevantada==null){
@@ -207,6 +221,9 @@ public class Tablero4x6 extends AppCompatActivity {
 
     }
 
+    public void guardarJuego(){
 
+
+    }
         }
 

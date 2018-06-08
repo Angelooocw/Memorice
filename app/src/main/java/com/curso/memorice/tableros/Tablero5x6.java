@@ -135,6 +135,7 @@ public class Tablero5x6 extends AppCompatActivity {
         }
         else{
             aux.setEstaDadaVuelta(true);
+            aux.getBotonCarta().setClickable(false);
             aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
 
             if(cartaLevantada==null){
