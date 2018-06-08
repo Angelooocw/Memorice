@@ -1,14 +1,15 @@
 package com.curso.memorice.tableros;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.curso.memorice.R;
-import com.curso.memorice.tableros.Carta;
 
 import java.util.Collections;
 import java.util.Vector;
@@ -20,7 +21,7 @@ public class Tablero4x6 extends AppCompatActivity {
     int imagenesSource[]= new int[12];
     Vector<Integer> distribucionDeImagenes =  new Vector();
 
-    Vector <Carta> cartasLevantadas = new Vector<>();
+   Carta cartaLevantada ;
     int cartasRestantes;
 
 
@@ -54,6 +55,9 @@ public class Tablero4x6 extends AppCompatActivity {
             Log.d("Id button", " "+aux.getId());
             botonesCarta.add(aux);
         }
+        cartaLevantada = null;
+        this.cartasRestantes=24;
+
 
         Log.d("Size", " "+botonesCarta.size());
         generarImagenesRandomCarta();
@@ -96,19 +100,80 @@ public class Tablero4x6 extends AppCompatActivity {
                 return aux;
             }
 
+        public boolean compararCartas(Carta c1, Carta c2){
+            return c1.getImagenCarta() == c2.getImagenCarta();
+        }
+
+        public boolean checkFinDeJuego(){
+        if(cartasRestantes == 0){
+            Toast.makeText(getApplicationContext(),"Haz Ganado", Toast.LENGTH_LONG);
+            return true;
+        }
+        else{
+            return false;
+        }
+        }
+
         public void darVueltaCarta(View v){
 
-                Carta aux = buscarCartaPresionada(v.getId());
+            final Carta  aux = buscarCartaPresionada(v.getId());
 
                 if(aux.isEstaDadaVuelta()){
                     aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
                     aux.setEstaDadaVuelta(false);
+                    cartaLevantada = null;
                 }
                 else{
                     aux.setEstaDadaVuelta(true);
                     aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
+                    if(cartaLevantada==null){
+                        cartaLevantada = aux;
+                    }
+                    else{
+                        if(compararCartas(aux,cartaLevantada)){
+                            Log.d("Etapa","cartas Iguales");
+                            Toast.makeText(getApplicationContext(),"Par encontrado", Toast.LENGTH_LONG).show();
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                public void run() {
+                                    cartasRestantes= cartasRestantes-2;
+                                    aux.getBotonCarta().setClickable(false);
+                                    aux.getBotonCarta().setVisibility(View.INVISIBLE);
+                                    aux.setParEncontrado(true);
+                                    cartaLevantada.getBotonCarta().setClickable(false);
+                                    cartaLevantada.getBotonCarta().setVisibility(View.INVISIBLE);
+                                    cartaLevantada.setParEncontrado(true);
+                                    cartaLevantada = null;
+                                }
+                            }, 3000);
+
+                        }
+                        else{
+                            Log.d("Etapa","cartas Distintas");
+
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                public void run() {
+
+                                    aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                                    aux.setEstaDadaVuelta(false);
+                                    cartaLevantada.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                                    cartaLevantada.setEstaDadaVuelta(false);
+                                    cartaLevantada = null;
+
+                                }
+                            }, 2000); Toast.makeText(getApplicationContext(),"Error", Toast.LENGTH_LONG).show();
+
+
+                        }
+
+                    }
 
                 }
 
+
+                }
+
+
         }
-}
+

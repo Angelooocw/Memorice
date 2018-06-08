@@ -8,11 +8,12 @@ public class Carta {
     private int imagenCarta;
     private int id;
     private boolean estaDadaVuelta;
-
+    private boolean parEncontrado;
     public Carta(Button b, int id){
         this.botonCarta = b;
         this.id = id;
         this.estaDadaVuelta = false;
+        this.parEncontrado = false;
     }
 
     public void setImagenCarta(int imagen){
@@ -37,5 +38,13 @@ public class Carta {
 
     public void setEstaDadaVuelta(boolean estaDadaVuelta) {
         this.estaDadaVuelta = estaDadaVuelta;
+    }
+
+    public boolean isParEncontrado() {
+        return parEncontrado;
+    }
+
+    public void setParEncontrado(boolean parEncontrado) {
+        this.parEncontrado = parEncontrado;
     }
 }
