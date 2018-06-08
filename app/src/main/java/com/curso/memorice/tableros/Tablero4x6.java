@@ -3,6 +3,7 @@ package com.curso.memorice.tableros;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 
@@ -18,6 +19,9 @@ public class Tablero4x6 extends AppCompatActivity {
     Vector<Button> botonesCarta = new Vector<>();
     int imagenesSource[]= new int[12];
     Vector<Integer> distribucionDeImagenes =  new Vector();
+
+    Vector <Carta> cartasLevantadas = new Vector<>();
+    int cartasRestantes;
 
 
     @Override
@@ -75,9 +79,36 @@ public class Tablero4x6 extends AppCompatActivity {
                 Log.d("ID","element at 0"+ distribucionDeImagenes.elementAt(i));
                 Log.d("ID","ej id"+R.drawable.dino1);
                 Carta aux = new Carta(botonesCarta.elementAt(i), i);
+                cartasEnMesa.add(aux);
                 aux.setImagenCarta(distribucionDeImagenes.elementAt(i));
-                aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
+                aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
             }
+
+        }
+        public Carta buscarCartaPresionada(int idB) {
+            Carta aux = null;
+            for (int i = 0; i < cartasEnMesa.size(); i++) {
+                if (cartasEnMesa.elementAt(i).getBotonCarta().getId() == idB) {
+                    return cartasEnMesa.elementAt(i);
+                }
+            }
+
+                return aux;
+            }
+
+        public void darVueltaCarta(View v){
+
+                Carta aux = buscarCartaPresionada(v.getId());
+
+                if(aux.isEstaDadaVuelta()){
+                    aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                    aux.setEstaDadaVuelta(false);
+                }
+                else{
+                    aux.setEstaDadaVuelta(true);
+                    aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
+
+                }
 
         }
 }

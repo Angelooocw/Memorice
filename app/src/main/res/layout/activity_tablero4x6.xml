@@ -29,7 +29,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"
+
+                />
 
             <Button
                 android:id="@+id/botonCarta2"
@@ -37,7 +40,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"
+                />
 
             <Button
                 android:id="@+id/botonCarta3"
@@ -45,7 +50,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"
+                />
 
             <Button
                 android:id="@+id/botonCarta4"
@@ -53,7 +60,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
         </TableRow>
 
@@ -70,7 +78,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
             <Button
                 android:id="@+id/botonCarta6"
@@ -78,7 +87,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
             <Button
                 android:id="@+id/botonCarta7"
@@ -86,7 +96,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
             <Button
                 android:id="@+id/botonCarta8"
@@ -94,7 +105,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
 
         </TableRow>
@@ -112,7 +124,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
             <Button
                 android:id="@+id/botonCarta10"
@@ -120,7 +133,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
             <Button
                 android:id="@+id/botonCarta11"
@@ -128,7 +142,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
             <Button
                 android:id="@+id/botonCarta12"
@@ -136,7 +151,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta"/>
 
 
         </TableRow>
@@ -145,9 +161,11 @@
             android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            >
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta13"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -156,6 +174,7 @@
                 android:background="@color/colorLightPrimary" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta14"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -164,6 +183,7 @@
                 android:background="@drawable/dino1" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta15"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -173,6 +193,7 @@
                 android:cursorVisible="false" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta16"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -190,6 +211,7 @@
             android:layout_weight="1">
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta17"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -198,6 +220,7 @@
                 android:background="@color/colorLightPrimary" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta18"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -206,6 +229,7 @@
                 android:background="@drawable/dino1" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta19"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -215,6 +239,7 @@
                 android:cursorVisible="false" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta20"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -232,6 +257,7 @@
             android:layout_weight="1">
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -240,6 +266,7 @@
                 android:background="@color/colorLightPrimary" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -248,6 +275,7 @@
                 android:background="@drawable/dino1" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta23"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -257,6 +285,7 @@
                 android:cursorVisible="false" />
 
             <Button
+                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta24"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

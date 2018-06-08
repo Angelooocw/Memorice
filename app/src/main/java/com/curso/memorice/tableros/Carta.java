@@ -7,10 +7,12 @@ public class Carta {
     private Button botonCarta;
     private int imagenCarta;
     private int id;
+    private boolean estaDadaVuelta;
 
     public Carta(Button b, int id){
         this.botonCarta = b;
         this.id = id;
+        this.estaDadaVuelta = false;
     }
 
     public void setImagenCarta(int imagen){
@@ -27,5 +29,13 @@ public class Carta {
 
     public int getImagenCarta() {
         return imagenCarta;
+    }
+
+    public boolean isEstaDadaVuelta() {
+        return estaDadaVuelta;
+    }
+
+    public void setEstaDadaVuelta(boolean estaDadaVuelta) {
+        this.estaDadaVuelta = estaDadaVuelta;
     }
 }
