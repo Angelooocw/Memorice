@@ -1,5 +1,6 @@
 package com.curso.memorice.tableros;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
+import com.curso.memorice.JuegoGuardado;
+import com.curso.memorice.PantallaInicio;
 import com.curso.memorice.R;
 
 import java.util.Collections;
@@ -24,7 +27,7 @@ public class Tablero4x6 extends AppCompatActivity {
     Vector<Button> botonesCarta = new Vector<>();
     int imagenesSource[]= new int[12];
     Vector<Integer> distribucionDeImagenes =  new Vector();
-
+    Boolean isLoadingGame;
    Carta cartaLevantada ;
     int cartasRestantes;
 
@@ -52,21 +55,48 @@ public class Tablero4x6 extends AppCompatActivity {
                 R.drawable.telescopio,
                 R.drawable.tubo*/
         };
-        Log.v("Size vecotr", " " +botonesCarta.size());
-        for(int i=0 ; i < 24;i++){
-            String nameButton = "botonCarta" + Integer.toString((i+1));
-            Button aux = findViewById(getResources().getIdentifier(nameButton, "id", getPackageName()));
-            Log.d("Id button", " "+aux.getId());
-            botonesCarta.add(aux);
-        }
-        cartaLevantada = null;
+        this.isLoadingGame = false;
         this.cartasRestantes=24;
 
+        if(isLoadingGame){
+            //AsignarEstado a los botones segun cartas
 
-        Log.d("Size", " "+botonesCarta.size());
-        generarImagenesRandomCarta();
-        generarCartas();
-        //Generar un orden aleatorio de las imagenes
+            for(int i=0; i < 24 ; i++){
+                Carta aux = cartasEnMesa.elementAt(i);
+                Button b1 = aux.getBotonCarta();
+                if(aux.isParEncontrado()){
+                    b1.setClickable(false);
+                    b1.setVisibility(View.INVISIBLE);
+                    cartasRestantes = cartasRestantes-1;
+                }
+                b1.setBackgroundResource(R.drawable.egg);
+            }
+
+
+
+        }
+
+        else{
+            Log.v("Size vecotr", " " +botonesCarta.size());
+            for(int i=0 ; i < 24;i++){
+                String nameButton = "botonCarta" + Integer.toString((i+1));
+                Button aux = findViewById(getResources().getIdentifier(nameButton, "id", getPackageName()));
+                Log.d("Id button", " "+aux.getId());
+                botonesCarta.add(aux);
+            }
+            cartaLevantada = null;
+
+
+
+            Log.d("Size", " "+botonesCarta.size());
+            generarImagenesRandomCarta();
+            generarCartas();
+            //Generar un orden aleatorio de las imagenes
+
+        }
+
+
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -183,6 +213,16 @@ public class Tablero4x6 extends AppCompatActivity {
                                 if(cartasEnMesa.elementAt(i).isParEncontrado()==false)
                                     cartasEnMesa.elementAt(i).getBotonCarta().setClickable(true);
                             }
+                            Log.d("FinalJuego",""+checkFinDeJuego());
+                            if(checkFinDeJuego()){
+                                Handler handler1 = new Handler();
+                                handler1.postDelayed(new Runnable() {
+                                    public void run() {
+                                        Intent i = new Intent(getApplicationContext(), PantallaInicio.class);
+                                        startActivity(i);
+                                    }
+                                }, 2000);
+                            }
                         }
                     }, 1500);
 
@@ -207,6 +247,8 @@ public class Tablero4x6 extends AppCompatActivity {
                                     cartasEnMesa.elementAt(i).getBotonCarta().setClickable(true);
                             }
 
+
+
                         }
                     }, 2000); Toast.makeText(getApplicationContext(),"No son iguales", Toast.LENGTH_SHORT).show();
 
@@ -218,12 +260,13 @@ public class Tablero4x6 extends AppCompatActivity {
 
         }
 
-
     }
 
     public void guardarJuego(){
+        JuegoGuardado juego = new JuegoGuardado(cartasEnMesa,1);
+
 
 
     }
-        }
+}
 

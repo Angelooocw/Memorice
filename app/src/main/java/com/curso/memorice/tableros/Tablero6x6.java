@@ -1,5 +1,6 @@
 package com.curso.memorice.tableros;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.curso.memorice.PantallaInicio;
 import com.curso.memorice.R;
 
 import java.util.Collections;
@@ -169,7 +171,16 @@ public class Tablero6x6 extends AppCompatActivity {
                             }
                         }
                     }, 1500);
-
+                    Log.d("FinalJuego",""+checkFinDeJuego());
+                    if(checkFinDeJuego()){
+                        Handler handler1 = new Handler();
+                        handler1.postDelayed(new Runnable() {
+                            public void run() {
+                                Intent i = new Intent(getApplicationContext(), PantallaInicio.class);
+                                startActivity(i);
+                            }
+                        }, 2000);
+                    }
                 }
                 else{
                     Log.d("Etapa","cartas Distintas");
@@ -200,6 +211,15 @@ public class Tablero6x6 extends AppCompatActivity {
 
             }
 
+        }
+        if(checkFinDeJuego()){
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    Intent i = new Intent(getApplicationContext(), PantallaInicio.class);
+                    startActivity(i);
+                }
+            }, 2000);
         }
 
 

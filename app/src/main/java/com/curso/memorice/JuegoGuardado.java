@@ -9,8 +9,8 @@ public class JuegoGuardado {
     Vector<Carta> cartas;
     int tablero;
 
-    public JuegoGuardado (String name, Vector<Carta> cartas, int tablero) {
-        this.name = name;
+    public JuegoGuardado ( Vector<Carta> cartas, int tablero) {
+
         this.cartas = cartas;
         this.tablero = tablero;
     }
