@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
     tools:context=".tableros.Tablero4x6">
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
-        android:weightSum="6">
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:weightSum="6"
+        android:background="@color/colorLightPrimary">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@android:color/background_light"
             android:weightSum="4">
 
             <Button
                 android:id="@+id/botonCarta1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1" />
 
@@ -30,7 +35,7 @@
                 android:id="@+id/botonCarta2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1" />
 
@@ -38,7 +43,7 @@
                 android:id="@+id/botonCarta3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1" />
 
@@ -46,48 +51,49 @@
                 android:id="@+id/botonCarta4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
         </TableRow>
 
         <TableRow
-
+            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:weightSum="4">
 
             <Button
                 android:id="@+id/botonCarta5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
 
@@ -95,6 +101,7 @@
 
 
         <TableRow
+            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -103,38 +110,39 @@
                 android:id="@+id/botonCarta9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta11"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
 
         </TableRow>
 
         <TableRow
+            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -143,24 +151,24 @@
                 android:id="@+id/botonCarta13"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@color/colorLightPrimary" />
 
             <Button
                 android:id="@+id/botonCarta14"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta15"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1"
                 android:cursorVisible="false" />
 
@@ -168,7 +176,7 @@
                 android:id="@+id/botonCarta16"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1" />
 
@@ -176,6 +184,7 @@
         </TableRow>
 
         <TableRow
+            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -184,24 +193,24 @@
                 android:id="@+id/botonCarta17"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@color/colorLightPrimary" />
 
             <Button
                 android:id="@+id/botonCarta18"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta19"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1"
                 android:cursorVisible="false" />
 
@@ -209,14 +218,15 @@
                 android:id="@+id/botonCarta20"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
 
         </TableRow>
 
         <TableRow
+            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -225,24 +235,24 @@
                 android:id="@+id/botonCarta21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@color/colorLightPrimary" />
 
             <Button
                 android:id="@+id/botonCarta22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
             <Button
                 android:id="@+id/botonCarta23"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1"
                 android:cursorVisible="false" />
 
@@ -250,8 +260,8 @@
                 android:id="@+id/botonCarta24"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:layout_margin="15dp"
                 android:background="@drawable/dino1" />
 
 
@@ -259,4 +269,4 @@
 
 
     </TableLayout>
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
