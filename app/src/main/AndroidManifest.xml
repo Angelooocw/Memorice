@@ -9,18 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Tablero1">
-
-        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Tablero1" />
         <activity android:name=".PantallaInicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".EscogerNuevoJuego" />
+        <activity android:name=".CargarUnJuego" />
+        <activity android:name=".TableroJuego" />
+        <activity android:name=".Creditos" />
+        <activity android:name=".Ayuda" />
+        <activity android:name=".tableros.Tablero4x6" />
+        <activity android:name=".tableros.Tablero5x6"></activity>
     </application>
 
 </manifest>

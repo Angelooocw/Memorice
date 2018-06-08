@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Memorice</string>
+    <string name="creditos">Esta aplicación ha sido desarrollada por los estudiantes Esteban Ibaca y Angelo Montaño para la asignatura "Desarrollo de Aplicaciones para Dispositivos Móviles", impartida por el profesor Mario Medina.</string>
 </resources>
