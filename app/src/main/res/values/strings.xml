@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Memorice</string>
     <string name="creditos">Esta aplicación ha sido desarrollada por los estudiantes Esteban Ibaca y Angelo Montaño para la asignatura "Desarrollo de Aplicaciones para Dispositivos Móviles", impartida por el profesor Mario Medina.</string>
+    <string name="ayuda1">Debe disponerse boca abajo una serie de parejas de fichas dadas.</string>
+    <string name="ayuda2">Se voltearán sucesivamente dos cartas, memorizando la ubicación de las mismas.</string>
+    <string name="ayuda3">Cuando se encuentren dos cartas idénticas que formen pareja, el jugador se las lleva.</string>
+    <string name="ayuda4">La partida terminará cuando estén todas las parejas encontradas.</string>
+    <string name="ayuda5">Ganará aquel jugador que haya conseguido llevarse más fichas.</string>
 </resources>
