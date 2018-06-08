@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.curso.memorice.tableros.Tablero4x6;
+import com.curso.memorice.tableros.Tablero5x6;
+import com.curso.memorice.tableros.Tablero6x6;
 
 public class EscogerNuevoJuego extends AppCompatActivity {
 
@@ -24,6 +26,14 @@ public class EscogerNuevoJuego extends AppCompatActivity {
 
     public void juego4x6(View view){
         Intent i = new Intent(getApplicationContext(), Tablero4x6.class);
+        startActivity(i);
+    }
+    public void juego5x6(View view){
+        Intent i = new Intent(getApplicationContext(), Tablero5x6.class);
+        startActivity(i);
+    }
+    public void juego6x6(View view){
+        Intent i = new Intent(getApplicationContext(), Tablero6x6.class);
         startActivity(i);
     }
 }

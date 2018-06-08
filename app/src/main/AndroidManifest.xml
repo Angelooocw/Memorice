@@ -24,7 +24,8 @@
         <activity android:name=".Creditos" />
         <activity android:name=".Ayuda" />
         <activity android:name=".tableros.Tablero4x6" />
-        <activity android:name=".tableros.Tablero5x6"></activity>
+        <activity android:name=".tableros.Tablero5x6" />
+        <activity android:name=".tableros.Tablero6x6"></activity>
     </application>
 
 </manifest>

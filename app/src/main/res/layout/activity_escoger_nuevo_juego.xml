@@ -79,6 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorLightPrimary"
+            android:onClick="juego5x6"
             android:padding="20dp"
             android:text="5 x 6" />
 
@@ -91,6 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorLightPrimary"
+            android:onClick="juego6x6"
             android:padding="20dp"
             android:text="6 x 6" />
     </LinearLayout>
