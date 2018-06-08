@@ -1,9 +1,12 @@
 package com.curso.memorice.tableros;
 
+import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -29,7 +32,7 @@ public class Tablero4x6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tablero4x6);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         imagenesSource = new int[]{
                 R.drawable.dino1,
                 R.drawable.dino2,
@@ -65,6 +68,11 @@ public class Tablero4x6 extends AppCompatActivity {
         //Generar un orden aleatorio de las imagenes
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_tablero, menu);
+        return true;
+    }
     public void generarImagenesRandomCarta(){
         int j=0;
         for(int i=0;i<imagenesSource.length*2;i++){
@@ -86,7 +94,7 @@ public class Tablero4x6 extends AppCompatActivity {
                 cartasEnMesa.add(aux);
                 aux.setImagenCarta(distribucionDeImagenes.elementAt(i));
                 //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
-                aux.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
+                aux.getBotonCarta().setBackgroundResource(R.drawable.egg);
             }
 
         }
@@ -117,70 +125,87 @@ public class Tablero4x6 extends AppCompatActivity {
         }
         }
 
-        public void darVueltaCarta(View v){
+    public void darVueltaCarta(View v){
 
-            final Carta  aux = buscarCartaPresionada(v.getId());
+        final Carta  aux = buscarCartaPresionada(v.getId());
 
-                if(aux.isEstaDadaVuelta()){
-                    //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
-                    aux.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
-                    aux.setEstaDadaVuelta(false);
-                    cartaLevantada = null;
+        if(aux.isEstaDadaVuelta()){
+            //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+            aux.getBotonCarta().setBackgroundResource(R.drawable.egg);
+            aux.setEstaDadaVuelta(false);
+            cartaLevantada = null;
+        }
+        else{
+            aux.setEstaDadaVuelta(true);
+            aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
+
+            if(cartaLevantada==null){
+                cartaLevantada = aux;
+            }
+            else{
+                Log.d("MESA", "AAAAA");
+                for(int i =0; i < cartasEnMesa.size();i++){
+                    cartasEnMesa.elementAt(i).getBotonCarta().setClickable(false);
+
+                }
+                Log.d("Desabilitar", "Disabled cards");
+                if(compararCartas(aux,cartaLevantada)){
+                    Log.d("Etapa","cartas Iguales");
+                    Toast.makeText(getApplicationContext(),"Par encontrado", Toast.LENGTH_SHORT).show();
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            cartasRestantes= cartasRestantes-2;
+
+                            aux.getBotonCarta().setClickable(false);
+                            aux.getBotonCarta().setVisibility(View.INVISIBLE);
+                            aux.setParEncontrado(true);
+                            cartaLevantada.getBotonCarta().setClickable(false);
+                            cartaLevantada.getBotonCarta().setVisibility(View.INVISIBLE);
+                            cartaLevantada.setParEncontrado(true);
+                            cartaLevantada = null;
+
+                            for(int i =0; i < cartasEnMesa.size();i++){
+                                if(cartasEnMesa.elementAt(i).isParEncontrado()==false)
+                                    cartasEnMesa.elementAt(i).getBotonCarta().setClickable(true);
+                            }
+                        }
+                    }, 1500);
+
                 }
                 else{
-                    aux.setEstaDadaVuelta(true);
-                    aux.getBotonCarta().setBackgroundResource(aux.getImagenCarta());
-                    if(cartaLevantada==null){
-                        cartaLevantada = aux;
-                    }
-                    else{
-                        if(compararCartas(aux,cartaLevantada)){
-                            Log.d("Etapa","cartas Iguales");
-                            Toast.makeText(getApplicationContext(),"Par encontrado", Toast.LENGTH_LONG).show();
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                public void run() {
-                                    cartasRestantes= cartasRestantes-2;
-                                    aux.getBotonCarta().setClickable(false);
-                                    aux.getBotonCarta().setVisibility(View.INVISIBLE);
-                                    aux.setParEncontrado(true);
-                                    cartaLevantada.getBotonCarta().setClickable(false);
-                                    cartaLevantada.getBotonCarta().setVisibility(View.INVISIBLE);
-                                    cartaLevantada.setParEncontrado(true);
-                                    cartaLevantada = null;
-                                }
-                            }, 3000);
+                    Log.d("Etapa","cartas Distintas");
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+
+                            //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                            aux.getBotonCarta().setBackgroundResource(R.drawable.egg);
+                            aux.setEstaDadaVuelta(false);
+                            //cartaLevantada.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                            cartaLevantada.getBotonCarta().setBackgroundResource(R.drawable.egg);
+                            cartaLevantada.setEstaDadaVuelta(false);
+                            cartaLevantada.getBotonCarta().setEnabled(true);
+                            cartaLevantada = null;
+                            aux.getBotonCarta().setEnabled(true);
+                            for(int i =0; i < cartasEnMesa.size();i++){
+                                if(cartasEnMesa.elementAt(i).isParEncontrado()==false)
+                                    cartasEnMesa.elementAt(i).getBotonCarta().setClickable(true);
+                            }
 
                         }
-                        else{
-                            Log.d("Etapa","cartas Distintas");
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                public void run() {
+                    }, 2000); Toast.makeText(getApplicationContext(),"No son iguales", Toast.LENGTH_SHORT).show();
 
-                                    //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
-                                    aux.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
-                                    aux.setEstaDadaVuelta(false);
-                                    //cartaLevantada.getBotonCarta().setBackgroundResource(R.color.colorAccent);
-                                    cartaLevantada.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
-                                    cartaLevantada.setEstaDadaVuelta(false);
-                                    cartaLevantada.getBotonCarta().setEnabled(true);
-                                    cartaLevantada = null;
-                                    aux.getBotonCarta().setEnabled(true);
-
-
-                                }
-                            }, 2000); Toast.makeText(getApplicationContext(),"Error", Toast.LENGTH_LONG).show();
-
-
-                        }
-
-                    }
 
                 }
 
 
-                }
+            }
+
+        }
+
+
+    }
 
 
         }
