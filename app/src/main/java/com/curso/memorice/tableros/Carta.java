@@ -3,7 +3,9 @@ package com.curso.memorice.tableros;
 import android.util.Log;
 import android.widget.Button;
 
-public class Carta {
+import java.io.Serializable;
+
+public class Carta  implements Serializable {
     private Button botonCarta;
     private int imagenCarta;
     private int id;
