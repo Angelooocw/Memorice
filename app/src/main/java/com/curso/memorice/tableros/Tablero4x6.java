@@ -85,7 +85,8 @@ public class Tablero4x6 extends AppCompatActivity {
                 Carta aux = new Carta(botonesCarta.elementAt(i), i);
                 cartasEnMesa.add(aux);
                 aux.setImagenCarta(distribucionDeImagenes.elementAt(i));
-                aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                aux.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
             }
 
         }
@@ -101,6 +102,8 @@ public class Tablero4x6 extends AppCompatActivity {
             }
 
         public boolean compararCartas(Carta c1, Carta c2){
+            c1.getBotonCarta().setEnabled(false);
+            c2.getBotonCarta().setEnabled(false);
             return c1.getImagenCarta() == c2.getImagenCarta();
         }
 
@@ -119,7 +122,8 @@ public class Tablero4x6 extends AppCompatActivity {
             final Carta  aux = buscarCartaPresionada(v.getId());
 
                 if(aux.isEstaDadaVuelta()){
-                    aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                    //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                    aux.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
                     aux.setEstaDadaVuelta(false);
                     cartaLevantada = null;
                 }
@@ -150,16 +154,20 @@ public class Tablero4x6 extends AppCompatActivity {
                         }
                         else{
                             Log.d("Etapa","cartas Distintas");
-
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
                                 public void run() {
 
-                                    aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                                    //aux.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                                    aux.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
                                     aux.setEstaDadaVuelta(false);
-                                    cartaLevantada.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                                    //cartaLevantada.getBotonCarta().setBackgroundResource(R.color.colorAccent);
+                                    cartaLevantada.getBotonCarta().setBackgroundResource(R.drawable.fortnite);
                                     cartaLevantada.setEstaDadaVuelta(false);
+                                    cartaLevantada.getBotonCarta().setEnabled(true);
                                     cartaLevantada = null;
+                                    aux.getBotonCarta().setEnabled(true);
+
 
                                 }
                             }, 2000); Toast.makeText(getApplicationContext(),"Error", Toast.LENGTH_LONG).show();

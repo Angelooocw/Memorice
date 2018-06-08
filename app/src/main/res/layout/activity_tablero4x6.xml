@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,12 +9,23 @@
     tools:context=".tableros.Tablero4x6">
 
     <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/tableLayout2"
+        android:layout_width="323dp"
+        android:layout_height="418dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
+        android:background="@color/colorLightPrimary"
         android:padding="5dp"
         android:weightSum="6"
-        android:background="@color/colorLightPrimary">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TableRow
             android:layout_width="match_parent"
@@ -41,8 +52,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"
-                />
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta3"
@@ -51,8 +61,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"
-                />
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta4"
@@ -61,15 +70,15 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
         </TableRow>
 
         <TableRow
-            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@android:color/background_light"
             android:weightSum="4">
 
             <Button
@@ -79,7 +88,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta6"
@@ -88,7 +97,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta7"
@@ -97,7 +106,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta8"
@@ -106,17 +115,17 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
 
         </TableRow>
 
 
         <TableRow
-            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@android:color/background_light">
 
             <Button
                 android:id="@+id/botonCarta9"
@@ -125,7 +134,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta10"
@@ -134,7 +143,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta11"
@@ -143,7 +152,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
             <Button
                 android:id="@+id/botonCarta12"
@@ -152,150 +161,163 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:onClick="darVueltaCarta"/>
+                android:onClick="darVueltaCarta" />
 
 
         </TableRow>
 
         <TableRow
-            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            >
+            android:background="@android:color/background_light">
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta13"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/colorLightPrimary" />
+                android:background="@color/colorLightPrimary"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta14"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta15"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta16"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta" />
 
 
         </TableRow>
 
         <TableRow
-            android:background="@android:color/background_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@android:color/background_light">
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta17"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/colorLightPrimary" />
+                android:background="@color/colorLightPrimary"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta18"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta19"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta20"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta" />
 
 
         </TableRow>
 
         <TableRow
-            android:background="@android:color/background_light"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_width="359dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:background="@android:color/background_light">
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/colorLightPrimary" />
+                android:background="@color/colorLightPrimary"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta23"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/dino1"
-                android:cursorVisible="false" />
+                android:cursorVisible="false"
+                android:onClick="darVueltaCarta" />
 
             <Button
-                android:onClick="darVueltaCarta"
                 android:id="@+id/botonCarta24"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/dino1" />
+                android:background="@drawable/dino1"
+                android:onClick="darVueltaCarta" />
 
 
         </TableRow>
-
-
     </TableLayout>
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Puntuacion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        app:layout_constraintVertical_bias="0.587" />
+</android.support.constraint.ConstraintLayout>
